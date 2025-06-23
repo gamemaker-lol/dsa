@@ -173,6 +173,44 @@ nav a:hover {
     justify-content: center;
 }
 
+/* Remove default margin/padding and disable scrolling */
+html, body, main {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Use flex column layout to stack select and player */
+body, main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Style the select container (first div inside main) */
+main > div:first-child {
+  padding: 10px;
+  background: #111;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Player container fills remaining space */
+#player-container {
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Make iframe fill its container */
+#player-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 iframe {
     width: 100%;
     height: 100%;
