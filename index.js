@@ -34,20 +34,21 @@ function displayMovies(movies) {
     movieDiv.style.animationDelay = `${index * 0.1}s`;
 
     const movieImage = document.createElement("img");
-    movieImage.src = movie.poster_path
-      ? `${IMAGE_BASE_URL}${movie.poster_path}`
-      : "https://via.placeholder.com/200x300?text=No+Image";
-    movieImage.alt = movie.title;
+movieImage.src = movie.poster_path
+  ? `${IMAGE_BASE_URL}${movie.poster_path}`
+  : "https://via.placeholder.com/200x300?text=No+Image";
+movieImage.alt = movie.title;
+movieImage.draggable = false;
 
-    const movieTitle = document.createElement("h2");
-    movieTitle.textContent = movie.title;
+const movieTitle = document.createElement("h2");
+movieTitle.textContent = movie.title;
 
-    const watchButton = document.createElement("button");
-    watchButton.textContent = "Watch Now";
-    watchButton.classList.add("watch-btn");
-    watchButton.addEventListener("click", () => {
-      window.location.href = `player.html?tmdbid=${movie.id}`;
-    });
+const watchButton = document.createElement("button");
+watchButton.textContent = "Watch Now";
+watchButton.classList.add("watch-btn");
+watchButton.addEventListener("click", () => {
+  window.location.href = `player.html?tmdbid=${movie.id}`;
+});
 
     movieDiv.appendChild(movieImage);
     movieDiv.appendChild(movieTitle);
