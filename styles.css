@@ -16,7 +16,6 @@
 /* === Base Styles === */
 body {
     margin: 0;
-    background: var(--gradient-primary-soft);
     color: var(--white);
     font-family: 'Poppins', sans-serif;
     text-align: center; /* center everything by default, per preference */
