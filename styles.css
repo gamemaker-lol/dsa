@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* === Variables for gradient theme === */
+/* === Gradient Theme Variables === */
 :root {
     --white: #ffffff;
     --gradient-primary: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
-    --gradient-primary-dark: linear-gradient(to bottom right, #000033, #003333, #000033);
-    --gradient-secondary: linear-gradient(to bottom right, #1a0026, #003333, #1a0026);
-    --gradient-secondary-dark: linear-gradient(to bottom right, #0d0013, #001a1a, #0d0013);
+    --gradient-primary-soft: linear-gradient(to bottom right, #002266, #0099aa, #002266);
+    --gradient-secondary: linear-gradient(to bottom right, #22003a, #005a6e, #22003a);
+    --gradient-secondary-soft: linear-gradient(to bottom right, #2b0050, #007b8f, #2b0050);
 
     --radius: 5px;
     --transition: 0.3s ease-in-out;
     --glow: 0 0 10px darkblue, 0 0 20px darkblue;
 }
 
-/* === Base styles === */
+/* === Base Styles === */
 body {
     margin: 0;
-    background: var(--gradient-primary-dark);
+    background: var(--gradient-primary-soft);
     color: var(--white);
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -32,7 +32,7 @@ p {
     margin: 10px 0 20px;
 }
 
-/* === Search input === */
+/* === Search Input === */
 #search {
     background-image: var(--gradient-primary);
     border: 2.5px solid transparent;
@@ -60,7 +60,7 @@ p {
     box-shadow: var(--glow);
 }
 
-/* === Buttons === */
+/* === Buttons (including .watch-btn) === */
 button,
 .watch-btn {
     background-image: var(--gradient-secondary);
@@ -72,12 +72,12 @@ button,
     font-size: 15px;
     transition: var(--transition);
     background-clip: padding-box;
-    border-image: var(--gradient-primary-dark) 1;
+    border-image: var(--gradient-primary-soft) 1;
 }
 
 button:hover,
 .watch-btn:hover {
-    box-shadow: 0 0 10px darkcyan, 0 0 20px darkblue;
+    box-shadow: 0 0 10px #00bcd4, 0 0 20px darkblue;
 }
 
 button#next-page {
@@ -95,9 +95,9 @@ button#next-page {
 
 /* === Movie Cards === */
 .movie {
-    background-image: var(--gradient-secondary-dark);
+    background-image: var(--gradient-secondary-soft);
     border: 2.5px solid;
-    border-image: var(--gradient-primary-dark) 1;
+    border-image: var(--gradient-primary-soft) 1;
     border-radius: 10px;
     padding: 15px;
     width: 200px;
@@ -106,7 +106,7 @@ button#next-page {
 }
 
 .movie:hover {
-    box-shadow: 0 0 10px darkcyan, 0 0 20px darkblue;
+    box-shadow: 0 0 10px #00bcd4, 0 0 20px darkblue;
     transform: scale(1.05);
 }
 
@@ -125,7 +125,7 @@ button#next-page {
 /* === Navigation === */
 nav {
     width: 100%;
-    background-image: var(--gradient-secondary-dark);
+    background-image: var(--gradient-secondary-soft);
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -154,7 +154,7 @@ nav a:hover {
 
 /* === Player Container === */
 #player-container {
-    background-image: var(--gradient-secondary-dark);
+    background-image: var(--gradient-secondary-soft);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
     overflow: hidden;
