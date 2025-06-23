@@ -19,8 +19,7 @@ body {
     background: var(--gradient-primary-soft);
     color: var(--white);
     font-family: 'Poppins', sans-serif;
-    /* Removed global text-align center to avoid weird centering */
-    /* text-align: center; */
+    text-align: center; /* center everything by default, per preference */
     scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;    /* IE 10+ */
 }
@@ -29,12 +28,14 @@ body::-webkit-scrollbar {
 }
 
 h1, h2 {
-    text-align: center; /* Only center headings */
+    margin: 20px 0 10px;
+    /* headings remain centered by inherited text-align */
 }
 
 p {
     font-size: 25px;
     margin: 10px 0 20px;
+    /* these will be centered too */
 }
 
 /* === Search Input === */
@@ -93,9 +94,10 @@ button#next-page {
 .results {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* changed from center to left align */
-    margin-top: 20px;
+    justify-content: center; /* center movie cards row */
     gap: 20px;
+    margin-top: 20px;
+    /* since body/text-align is center, this container is centered too */
 }
 
 /* Fade-in animation */
@@ -113,14 +115,17 @@ button#next-page {
 /* === Movie Cards === */
 .movie {
     background-image: var(--gradient-secondary-soft);
-    border: 2.5px solid darkblue; /* solid border for clearer edges */
-    /* Removed border-image for simplicity */
+    /* Restore gradient border if you like: */
+    border: 2.5px solid transparent;
     border-radius: 10px;
     padding: 15px;
     width: 200px;
-    text-align: center;
+    text-align: center; /* ensure text inside is centered */
     transition: var(--transition);
-    /* Removed default opacity: 0 to fix JS animation conflicts */
+    /* gradient border-image: */
+    border-image: var(--gradient-primary-soft) 1;
+    /* Remove default opacity so JS animation can control fade-in */
+    /* opacity: 0;  <-- removed */
 }
 
 .movie:hover {
