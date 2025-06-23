@@ -15,10 +15,10 @@ p {
 }
 
 #search {
-    background-color: #250307;
+    background-color: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
     border-style: solid;
     outline: none;
-    border-color: #490714;
+    border-color: darkblue;
     border-width: 2.5px;
     border-radius: 5px;
     padding: 12px;
