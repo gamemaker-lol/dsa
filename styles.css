@@ -15,7 +15,7 @@ p {
 }
 
 #search {
-    background-color: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
+    background-image: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
     border-style: solid;
     outline: none;
     border-color: darkblue;
