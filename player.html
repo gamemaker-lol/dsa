@@ -12,14 +12,13 @@
   <body class="player-page">
     <main>
       <div>
-        <label for="player-source">Choose a source:</label>
+        <label for="player-source">Choose a server:</label>
         <select id="player-source">
-          <option value="2embed">2embed (main)</option>
-          <option value="embed.su">embed.su (second)</option>
-          <option value="streamlink">streamlink (third)</option>
-          <option value="vidbinge">vidbinge (not recommended)</option>
-          <option value="vidsrc">vidsrc (not recommended)</option>
-          <option value="moviesapi.club">moviesapi.club (not recommended)</option>
+          <option value="2embed">Main</option>
+          <option value="embed.su">Second</option>
+          <option value="streamlink">Third</option>
+          <option value="vidsrc">Not recommended</option>
+          <option value="moviesapi.club">Sometimes blocked</option>
         </select>
       </div>
       <div id="player-container">
@@ -46,8 +45,6 @@
           } else if (source === "moviesapi.club") {
             iframe.src = `https://moviesapi.club/movie/${tmdbId}`;
           } else if (source === "vidbinge") {
-            iframe.src = `https://vidbinge.dev/embed/movie/${tmdbId}`;
-          } else if (source === "vidsrc") {
             iframe.src = `https://vidsrc.net/embed/${tmdbId}`;
           } else if (source === "streamlink") {
             iframe.src = `https://www.vidlink.pro/movie/${tmdbId}?autoplay=false`;
