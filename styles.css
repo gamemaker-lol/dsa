@@ -100,15 +100,6 @@ button#next-page {
     /* since body/text-align is center, this container is centered too */
 }
 
-.search-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
@@ -269,4 +260,13 @@ nav a:hover {
   height: 100%;
   border: none;
   display: block;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
