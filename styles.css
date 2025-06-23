@@ -20,12 +20,13 @@ body {
     color: var(--white);
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE 10+ */
-}
 
+    /* Invisible scrollbar */
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE 10+ */
+}
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+    display: none; /* Chrome, Safari, Edge */
 }
 
 h1 {
@@ -99,6 +100,18 @@ button#next-page {
     gap: 20px;
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* === Movie Cards === */
 .movie {
     background-image: var(--gradient-secondary-soft);
@@ -109,6 +122,7 @@ button#next-page {
     width: 200px;
     text-align: center;
     transition: var(--transition);
+    opacity: 0; /* start hidden for fade-in via JS */
 }
 
 .movie:hover {
@@ -120,6 +134,9 @@ button#next-page {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
 }
 
 .movie h2 {
@@ -158,7 +175,7 @@ nav a:hover {
     color: #c4c4c4;
 }
 
-/* === Player Container === */
+/* === Player Container (for main page preview or general use) === */
 #player-container {
     background-image: var(--gradient-secondary-soft);
     border-radius: 10px;
@@ -173,72 +190,71 @@ nav a:hover {
     justify-content: center;
 }
 
-/* Remove default margin/padding and disable scrolling */
-html, body, main {
+#player-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 600px) {
+    #search {
+        width: 80%;
+    }
+    .movie {
+        width: 90%;
+    }
+    #player-container {
+        width: 95%;
+    }
+}
+
+/* ===== Player page specific styles (scoped with .player-page) ===== */
+
+.player-page html,
+.player-page body,
+.player-page main {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
 }
 
-/* Use flex column layout to stack select and player */
-body, main {
+.player-page body,
+.player-page main {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: var(--gradient-primary-soft);
+  color: var(--white);
 }
 
-/* Style the select container (first div inside main) */
-main > div:first-child {
+.player-page main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.player-page main > div:first-child {
   padding: 10px;
   background: #111;
-  flex-shrink: 0; /* Prevent shrinking */
+  flex-shrink: 0;
 }
 
-/* Player container fills remaining space */
-#player-container {
+.player-page #player-container {
   flex-grow: 1;
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Make iframe fill its container */
-#player-container iframe {
+.player-page #player-container iframe {
   width: 100%;
   height: 100%;
   border: none;
   display: block;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* === Responsive Tweaks === */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-    #search {
-        width: 80%;
-    }
-
-    .movie {
-        width: 90%;
-    }
-
-    #player-container {
-        width: 95%;
-    }
 }
