@@ -16,32 +16,37 @@ p {
 
 #search {
     background-image: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
-    border: 2.5px solid darkblue;
+    border: 2.5px solid transparent;
     border-radius: 5px;
     padding: 12px;
-    color: white; /* user-typed text */
+    color: white;
     font-family: 'Poppins', sans-serif;
     width: 30%;
     text-align: center;
-    transition: all ease-in-out 0.3s;
+    transition: all 0.3s ease-in-out;
     font-size: 15px;
 
-    /* Disable default browser styles */
+    background-clip: padding-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 
-    /* Ensure background isn't covered by internal elements (esp. in Safari/Chrome) */
-    background-clip: padding-box;
+    /* More visible gradient border */
+    border-image: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
+    border-image-slice: 1;
 }
 
-#search:placeholder-shown {
+/* Placeholder text styling */
+#search::placeholder {
+    color: white;
+    opacity: 1;
     font-style: italic;
 }
 
+/* Focus effect with strong dark blue glow */
 #search:focus {
-    border-color: #490714;
-    box-shadow: 0 0 10px #490714, 0 0 20px #490714;
+    outline: none;
+    box-shadow: 0 0 10px darkblue, 0 0 20px darkblue;
 }
 
 button {
