@@ -21,6 +21,12 @@ async function searchMovies(query) {
   }
 }
 
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    discoverButton.click();
+  }
+});
+
 function displayMovies(movies) {
   resultsContainer.innerHTML = ""; // Clear previous results
 
