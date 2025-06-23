@@ -12,14 +12,14 @@
   <body>
     <main>
       <div>
-        <label for="player-source">choose a movie source:</label>
+        <label for="player-source">Choose a source:</label>
         <select id="player-source">
-          <option value="moviesapi.club">moviesapi.club (default)</option>
+          <option value="2embed">2embed (main)</option>
           <option value="embed.su">embed.su</option>
           <option value="streamlink">streamlink</option>
           <option value="vidbinge">vidbinge</option>
           <option value="vidsrc">vidsrc</option>
-          <option value="2embed">2embed</option>
+          <option value="moviesapi.club">moviesapi.club (not recommended)</option>
         </select>
       </div>
       <div id="player-container">
@@ -39,8 +39,8 @@
           iframe.allow = "autoplay; fullscreen";
           iframe.allowfullscreen = true;
 
-          if (source === "streamlink") {
-            iframe.src = `https://www.vidlink.pro/movie/${tmdbId}?autoplay=false`;
+          if (source === "2embed") {
+            iframe.src = `https://www.2embed.skin/embed/${tmdbId}`;
           } else if (source === "embed.su") {
             iframe.src = `https://embed.su/embed/movie/${tmdbId}`;
           } else if (source === "moviesapi.club") {
@@ -49,8 +49,8 @@
             iframe.src = `https://vidbinge.dev/embed/movie/${tmdbId}`;
           } else if (source === "vidsrc") {
             iframe.src = `https://vidsrc.net/embed/${tmdbId}`;
-          } else if (source === "2embed") {
-            iframe.src = `https://www.2embed.skin/embed/${tmdbId}`;
+          } else if (source === "streamlink") {
+            iframe.src = `https://www.vidlink.pro/movie/${tmdbId}?autoplay=false`;
           }
 
           playerContainer.innerHTML = "";
