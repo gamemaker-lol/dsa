@@ -24,9 +24,14 @@ async function searchMovies(query) {
 function displayMovies(movies) {
   resultsContainer.innerHTML = ""; // Clear previous results
 
-  movies.forEach((movie) => {
+  movies.forEach((movie, index) => {
     const movieDiv = document.createElement("div");
     movieDiv.classList.add("movie");
+
+    // Add fadeIn animation and delay (0.1s * index)
+    movieDiv.style.opacity = 0; // start hidden for smooth fade in
+    movieDiv.style.animation = `fadeIn 0.4s forwards`;
+    movieDiv.style.animationDelay = `${index * 0.1}s`;
 
     const movieImage = document.createElement("img");
     movieImage.src = movie.poster_path
