@@ -16,18 +16,23 @@ p {
 
 #search {
     background-image: linear-gradient(to bottom right, darkblue, darkcyan, darkblue);
-    border-style: solid;
-    outline: none;
-    border-color: darkblue;
-    border-width: 2.5px;
+    border: 2.5px solid darkblue;
     border-radius: 5px;
     padding: 12px;
-    color: white;
+    color: white; /* user-typed text */
     font-family: 'Poppins', sans-serif;
     width: 30%;
     text-align: center;
     transition: all ease-in-out 0.3s;
     font-size: 15px;
+
+    /* Disable default browser styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Ensure background isn't covered by internal elements (esp. in Safari/Chrome) */
+    background-clip: padding-box;
 }
 
 #search:placeholder-shown {
