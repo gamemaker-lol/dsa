@@ -52,7 +52,7 @@ const movieTitle = document.createElement("h2");
 movieTitle.textContent = movie.title;
 
 const watchButton = document.createElement("button");
-watchButton.textContent = "Watch Now";
+watchButton.textContent = "Watch now!";
 watchButton.classList.add("watch-btn");
 watchButton.addEventListener("click", () => {
   window.location.href = `player.html?tmdbid=${movie.id}`;
