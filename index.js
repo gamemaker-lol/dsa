@@ -1,12 +1,20 @@
 const discoverButton = document.getElementById("discover");
 const searchInput = document.getElementById("search");
 
-discoverButton.addEventListener("click", () => {
+function handleSearch() {
   const query = searchInput.value.trim();
   if (query) {
     searchMovies(query);
   } else {
     alert("Please enter a search term.");
+  }
+}
+
+discoverButton.addEventListener("click", handleSearch);
+
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    handleSearch();
   }
 });
 
@@ -20,12 +28,6 @@ async function searchMovies(query) {
     alert("Failed to fetch movies. Please try again later.");
   }
 }
-
-searchInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    discoverButton.click();
-  }
-});
 
 function displayMovies(movies) {
   resultsContainer.innerHTML = ""; // Clear previous results
