@@ -19,9 +19,8 @@ body {
     background: var(--gradient-primary-soft);
     color: var(--white);
     font-family: 'Poppins', sans-serif;
-    text-align: center;
-
-    /* Invisible scrollbar */
+    /* Removed global text-align center to avoid weird centering */
+    /* text-align: center; */
     scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;    /* IE 10+ */
 }
@@ -29,9 +28,8 @@ body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
 }
 
-h1 {
-    font-size: 45px;
-    margin: 20px 0;
+h1, h2 {
+    text-align: center; /* Only center headings */
 }
 
 p {
@@ -95,7 +93,7 @@ button#next-page {
 .results {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; /* changed from center to left align */
     margin-top: 20px;
     gap: 20px;
 }
@@ -115,14 +113,14 @@ button#next-page {
 /* === Movie Cards === */
 .movie {
     background-image: var(--gradient-secondary-soft);
-    border: 2.5px solid;
-    border-image: var(--gradient-primary-soft) 1;
+    border: 2.5px solid darkblue; /* solid border for clearer edges */
+    /* Removed border-image for simplicity */
     border-radius: 10px;
     padding: 15px;
     width: 200px;
     text-align: center;
     transition: var(--transition);
-    opacity: 0; /* start hidden for fade-in via JS */
+    /* Removed default opacity: 0 to fix JS animation conflicts */
 }
 
 .movie:hover {
