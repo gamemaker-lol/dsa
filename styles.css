@@ -229,7 +229,6 @@ nav a:hover {
   flex-direction: column;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
-  background: var(--gradient-primary-soft);
   color: var(--white);
 }
 
